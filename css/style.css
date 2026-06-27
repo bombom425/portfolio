@@ -1,0 +1,1993 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 全体の設定 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+
+:root {
+    --primary-green: #76d059;
+    --accent-red: #c94a45;
+    --dark-gray: #222;
+    --bg-color: #fff;
+    --text-color: #333;
+}
+body {
+    margin: 0;
+	font-family: "Zen Maru Gothic", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* サイト左右のグリーンライン */
+    /* border-left: 15px solid var(--primary-green);
+    border-right: 15px solid var(--primary-green); */
+    /* min-height: 100vh; */
+	background-image: url("../img/body-background-image-use.png");
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: left top;
+}
+
+/* ======== */
+/* ヘッダー */
+/* ======== */
+.site-header {
+	/* ヘッダーの固定配置
+	position: fixed;
+	top: 20px; 
+	left: 70%;
+	transform: translateX(-50%);
+	width: auto;
+	z-index: 100; */
+	position: absolute;
+	top: 20px; 
+	left: 70%;
+	transform: translateX(-50%);
+	width: auto;
+	z-index: 100;
+}
+.header-nav {
+	background-color: #f0f2f5; 
+	border-radius: 50px;
+	padding: 10px 60px;
+    transition: background-color 0.4s ease;
+    white-space: nowrap;
+}
+/* .header-nav.is-scrolled {
+	background-color: rgba(243, 244, 245, 0.6); 
+	box-shadow: none;
+} */
+.header-nav ul {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+	list-style: none;
+}
+.header-nav a {
+    display: inline-block;
+    font-family: 'Darumadrop One', sans-serif;
+	text-decoration: none;
+	color: #DF4B2D;
+	font-weight: 700;
+	font-size: 1.5rem;
+	letter-spacing: 0.25em;
+	transition: opacity 0.3s;
+}
+.header-nav a:hover {
+	/* opacity: 0.7; */
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+	.site-header {
+		top: 10px;        
+		left: 50%;           
+		transform: translateX(-50%); 
+		width: 90%;             
+		max-width: 400px;     
+	}
+	.header-nav {
+		padding: 8px 0;        
+		border-radius: 30px;    
+	}
+	.header-nav ul {
+		gap: 20px;              
+	}
+	.header-nav a {
+		font-size: 1rem;       
+		letter-spacing: 0.1em;   
+	}
+	.header-nav a:hover {
+		transform: none;
+	}
+}
+
+/* ============ */
+/* トップビュー */
+/* ============ */
+.hero-container {
+	position: relative;
+	width: calc(100% - 150px); /* 左右に200pxずつの隙間を作る */
+	height: calc(100vh - 150px); /* 上下に200pxずつの隙間を作る */
+	margin: 100px auto 0; 
+	background-image: url('../img/topview-background-image02.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	border-radius: 40px; 
+}
+.hero-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(30, 30, 30, 0.5); 
+	z-index: 1;
+	border-radius: 40px;
+}
+.hero-inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	text-align: center;
+	width: 100%; 
+}
+.hero-overlay-text {
+	font-family: 'Darumadrop One', sans-serif;
+	font-size: 2.75rem; 
+	color: #fff; 
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 1em; 
+	text-align: center;
+}
+.hero-overlay-text-small{
+	font-family: 'Darumadrop One', sans-serif;
+	font-size: 2.25rem; 
+	color: #fff; 
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 0.75em; 
+	text-align: center;
+	margin-bottom: 100px;
+}
+.hero-character {
+	position: absolute;
+	bottom: -50px; 
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 3; 
+	width: 300px; 
+	height: auto;
+}
+.hero-character img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.hero-container {
+		width: 100%; 
+		height: 100vh;
+		margin: 0 auto;
+		border-radius: 0; 
+	}
+	.hero-overlay {
+		border-radius: 0; 
+	}
+	.hero-inner {
+		padding: 0 20px; 
+		box-sizing: border-box;
+	}
+	.hero-overlay-text {
+		font-size: 2.5rem; 
+		letter-spacing: 0.3em; 
+		line-height: 1.4;
+	}
+	.hero-overlay-text-small {
+		font-size: 1.875rem;
+		letter-spacing: 0.2em;
+		margin-bottom: 60px; 
+	}
+	.hero-character {
+		width: 180px;
+		bottom: -25px;
+	}
+}
+
+/* =================*/
+/* 自己紹介セクション  
+/* ================= */
+.about-section {
+    /* background-color: #f0f2f5;  */
+    /* padding: 20px 20px 100px; アバターと自己紹介文を平行　*/
+    padding: 100px 20px; 
+}
+.about-container {
+    max-width: 1000px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; 
+}
+.about-profile {
+    width: 320px;
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-en {
+    font-family: "Darumadrop One", sans-serif; 
+    font-size: 1.5rem;
+    color: #F34CAB; 
+    letter-spacing: 0.15em;
+	line-height: 1em;
+    text-align: center;
+}
+.profile-jp {
+    font-family: "Darumadrop One", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+.profile-avatar {
+    width: 100%;
+}
+.profile-avatar img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* padding-top: 200px; アバターと自己紹介文を平行　*/
+}
+.about-text {
+    margin-bottom: 40px;
+    text-align: justify; 
+}
+.about-text p {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 500; 
+    font-size: 1rem;
+    line-height: 2.2; 
+}
+.about-text p {
+    margin: 0;
+}
+.more-btn {
+    display: inline-block;
+    background-color: #F34CAB; 
+    color: #fff;
+    font-family: "Darumadrop One", sans-serif; 
+    font-size: 1.5rem;
+    padding: 10px 50px;
+    border-radius: 50px; 
+    text-decoration: none; 
+    transition: background-color 0.3s, transform 0.2s;
+    letter-spacing: 0.1em;
+}
+.more-btn:hover {
+    /* opacity: 0.7; */
+    transform: translateY(-5px); 
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 40px;
+    }
+    .about-profile {
+        width: 100%;
+        max-width: 320px; 
+    }
+    .about-content {
+        padding-top: 0; 
+        align-items: center; 
+    }
+    .about-text {
+        text-align: left; 
+        margin-bottom: 30px;
+    }
+    .more-btn {
+        width: 100%;
+        max-width: 300px; 
+        text-align: center;
+    }
+}
+
+/* ====================== */
+/* 私にできることセクション  
+/* ====================== */
+.skills-section {
+    padding: 100px 20px;
+}
+.skills-title-area {
+    margin-bottom: 40px;
+}
+.skills-title-en {
+    font-family: "Darumadrop One", sans-serif;
+    font-size: 2.625rem;
+    color: #F3954C;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.05em;
+	line-height: 1em;
+    text-align: center;
+}
+.skills-title-jp {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+.skills-container {
+    max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); 
+	gap: 40px;
+}
+.skill-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+	align-items: center;       
+	text-align: center;
+}
+.card-header {
+	display: flex;
+	align-items: center;        
+	justify-content: center;   
+	gap: 15px;                  
+	margin-bottom: 30px;     
+	width: 100%;
+}
+.card-num {
+    font-family: "Darumadrop One", sans-serif;
+    font-size: 5rem;
+    color: rgba(243, 149, 76, 0.5);
+    margin-bottom: 25px;
+    line-height: 1em;
+    z-index: 1; 
+    pointer-events: none; 
+}
+.card-title {
+    font-size: 1.3125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #fff;
+	background-color: #F3954C; 
+	padding: 8px 24px;          
+	margin: 0;         
+	white-space: nowrap;
+}
+.card-img {
+    width: 100%;
+    max-width: 220px; 
+    height: 140px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px 0;
+}
+.card-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+}
+.card-text {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+	text-align: justify;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.skills-section {
+		padding: 60px 20px;
+	}
+	.skills-title-en {
+		font-size: 2.8rem;
+	}
+	.skills-container {
+		grid-template-columns: 1fr; 
+		max-width: 450px; 
+		gap: 60px;                
+	}
+	.card-header {
+		margin-bottom: 25px;
+		gap: 12px;
+	}
+	.card-num {
+		font-size: 3.5rem;    
+	}
+	.card-title {
+		font-size: 1.125rem;
+		padding: 6px 20px;
+	}
+	.card-img {
+		max-width: 180px;
+		height: 130px;
+		margin-bottom: 25px;
+	}
+	.card-text {
+		font-size: 0.9375rem;
+		line-height: 1.7;
+	}
+}
+
+/* ================= */
+/* スキルのセクション 
+/* ================= */
+.skill-detail-section {
+    padding: 100px 20px;
+}
+.skill-detail-title-area {
+    margin-bottom: 50px;
+}
+.skill-detail-title-en {
+    font-family: "Darumadrop One", sans-serif;
+    font-size: 2.625rem;
+    color: #95D570;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.05em;
+	line-height: 1em;
+    text-align: center;
+}
+.skill-detail-title-jp {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+.skill-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; 
+}
+.tab-btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 10px 35px;
+    border-radius: 50px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+    outline: none;
+}
+.tab-btn:hover {
+    opacity: 0.8;
+}
+.tab-btn.active {
+    background-color: #95D570;
+    color: #fff;
+    border: none; 
+}
+.skill-content-wrap {
+    max-width: 600px; 
+    margin: 0 auto;
+}
+.category-title {
+    font-size: 1.5rem;
+	font-weight: 700;
+    margin: 0 0 40px 0;
+    padding-bottom: 15px;
+    border-bottom: 5px solid #95D570; 
+    letter-spacing: 0.05em;
+}
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.skill-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+.skill-visual-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 18px; 
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+#coding .skill-icon{
+    width: 80px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 18px; 
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.skill-icon img {
+    width: 60%; 
+    height: auto;
+    object-fit: contain;
+}
+.skill-level-bar {
+    display: flex;
+    gap: 10px; 
+}
+.level-indicator {
+    width: 16px;
+    height: 50px; 
+    border-radius: 8px; 
+    display: inline-block;
+}
+.level-fill {
+    background-color: #95D570;
+}
+.level-empty {
+    background-color: #D9D9D9;
+}
+.skill-description {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.75;
+}
+
+@media screen and (max-width: 768px) {
+    .skill-detail-section {
+        padding: 60px 20px;
+    }
+    .skill-detail-title-en {
+        font-size: 2.8rem;
+    }
+    .skill-tabs {
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 10px 25px;
+    }
+    .category-title {
+        font-size: 1.35rem;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+    }
+    .skill-list {
+        gap: 35px;
+    }
+    .skill-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 14px;
+    }
+    .level-indicator {
+        width: 12px;
+        height: 40px;
+        border-radius: 6px;
+    }
+    .skill-name {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .skill-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* =============== */
+/* 制作物セクション */
+/* =============== */
+.works-section {
+	padding: 100px 20px;
+}
+.works-title-area {
+	margin-bottom: 80px;
+}
+.works-title-en {
+	font-family: 'Darumadrop One', cursive;
+	font-size: 2.625rem;
+	color: #F3954C; 
+	margin: 0 0 5px 0;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	text-align: center;
+}
+.works-title-jp {
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-align: center;
+}
+.works-container {
+	max-width: 900px;        
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 100px;                 
+}
+.works-item {
+	width: 100%;
+}
+.works-link {
+	display: flex;
+	align-items: center;        
+	justify-content: space-between;
+	gap: 80px;               
+	width: 100%;
+	text-decoration: none;      
+	cursor: pointer;           
+	color: inherit;          
+}
+.works-item:nth-child(even) .works-link {
+	flex-direction: row-reverse;
+}
+.works-img-box {
+	flex: 0 1 50%;            
+	max-width: 500px;
+	width: 100%;
+	aspect-ratio: 16 / 10;    
+	border-radius: 30px;      
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	width: 100%;
+	transition: transform 0.6s ease-in-out;
+}
+.works-link:hover .works-img-box {
+	transform: scale(1.05);
+}
+.works-img-box.bg-gold {
+	/* background: linear-gradient(to bottom, #ffffff 60%, #C1AB05 40%);
+	border: 3px solid #C1AB05; */
+	background-color: #C1AB05;
+}
+.works-img-box.bg-red {
+	/* background: linear-gradient(to bottom, #ffffff 60%, #E64C4C 40%);
+	border: 3px solid #E64C4C; */
+	background-color: #E64C4C;
+}
+.works-img-box.bg-orange {
+	/* background: linear-gradient(to bottom, #ffffff 60%, #EAA32A 40%);
+	border: 3px solid #EAA32A; */
+	background-color: #EAA32A;
+}
+.works-img-box.bg-yellow {
+	/* background: linear-gradient(to bottom, #ffffff 60%, #D6CE31 40%);
+	border: 3px solid #D6CE31; */
+	background-color: #D6CE31;
+}
+.works-img-box img {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+.works-info-box {
+	flex: 0 1 50%;
+	text-align: left;          
+}
+.works-img-box.bg-yellow img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; 
+	object-position: center; 
+}
+.works-meta {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+.badge {
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 10px 30px;
+	border-radius: 10px;
+	display: inline-block;
+}
+.works-pages {
+	font-size: 1.125rem;
+	font-weight: 500;
+	color: #777;
+}
+.works-tags {
+	font-size: 1rem;
+	font-weight: 800;
+	color: #70BFD5;             
+	letter-spacing: 0.05em;
+	margin: 0 0 15px 0;
+	white-space: nowrap;
+}
+.works-item-title {
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin: 0;
+	line-height: 1.4;
+	white-space: nowrap;
+}
+.works-item.layout-vertical .works-link {
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	gap: 80px; 
+}
+.works-item.layout-vertical .works-info-box {
+	width: 100%;
+	max-width: 100%;
+}
+.works-item.layout-vertical .works-img-box.bg-bordeaux {
+	width: 100%;
+	max-width: 100%;     
+	height: auto;
+	aspect-ratio: auto;   
+	/* background: linear-gradient(to bottom, #ffffff 60%, #901F51 40%); */
+	background-color: #901F51;
+	/* border: 3px solid #901F51; */
+	border-radius: 30px;  
+	padding: 60px 40px;  
+	box-sizing: border-box;
+	margin-top: 80px;
+}
+.wine-grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); 
+	gap: 30px; 
+	width: 100%;
+	height: 100%;
+	align-items: center; 
+}
+.wine-grid-item {
+	width: 100%;
+	aspect-ratio: 16 / 11; 
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+}
+.wine-grid-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; 
+	padding: 5px;
+	box-sizing: border-box;
+}
+.works-modal-trigger {
+	cursor: pointer;
+}
+.wine-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); 
+	display: none;                         
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	padding: 40px 20px;
+	box-sizing: border-box;
+}
+.wine-modal-overlay.is-active {
+	display: flex;
+	opacity: 1;
+}
+.wine-modal-content {
+	position: relative;
+	width: 100%;
+	max-width: 1000px;                     
+	max-height: 95vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wine-modal-container {
+	width: 100%;
+	background-color: #901F51;             
+	border-radius: 30px;
+	padding: 50px 40px;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr); 
+	gap: 40px;                             
+	overflow-y: auto;                     
+	max-height: 90vh;
+	-ms-overflow-style: none;              /* IE, Edge用 */
+	scrollbar-width: none;                 /* Firefox用 */
+}
+/* Google Chrome, Safari用のスクロールバー非表示設定 */
+.wine-modal-container::-webkit-scrollbar {
+	display: none;
+}
+.wine-modal-item {
+	width: 100%;
+	aspect-ratio: 16 / 11;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.wine-modal-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;                   
+}
+
+/* ======================== */
+/* スマホサイズ（768px以下） */
+/* ======================== */
+@media screen and (max-width: 768px) {
+	.works-section {
+		padding: 60px 20px;
+	}
+	.works-title-area {
+		margin-bottom: 40px;
+	}
+	.works-title-en {
+		font-size: 2.25rem;
+	}
+	.works-container {
+		gap: 60px; 
+	}
+	.works-link {
+		flex-direction: column;
+		gap: 20px; 
+	}
+	.works-item:nth-child(even) .works-link {
+		flex-direction: column;
+	}
+	.works-img-box {
+		max-width: 100%;
+		border-radius: 20px; 
+	}
+	.works-info-box {
+		width: 100%;
+	}
+	.works-meta {
+		gap: 10px;
+		margin-bottom: 10px;
+	}
+	.badge {
+		font-size: 0.875rem;
+		padding: 6px 20px; 
+		border-radius: 8px;
+	}
+	.works-pages {
+		font-size: 1rem;
+	}
+	.works-tags {
+		font-size: 0.875rem;
+		margin-bottom: 8px;
+		white-space: normal; 
+	}
+	.works-item-title {
+		font-size: 1.375rem;
+		white-space: normal; 
+	}
+	.works-item.layout-vertical .works-link {
+		gap: 20px;
+	}
+	.works-item.layout-vertical .works-img-box.bg-bordeaux {
+		padding: 30px 20px; 
+		border-radius: 20px;
+		margin-top: 40px;
+	}
+	.wine-grid-container {
+		gap: 15px; 
+	}
+	.wine-grid-item {
+		border-radius: 8px;
+	}
+	.wine-modal-content {
+		max-width: 100%;
+	}
+	.wine-modal-container {
+		gap: 30px;
+		padding: 40px 20px;
+		max-height: 85vh;
+	}
+}
+
+/* ======== */
+/* CONTACT  */
+/* ======== */
+.contact-section {
+	padding: 100px 0;
+}
+.contact-title-en {
+	font-family: 'Darumadrop One', sans-serif;
+	font-size: 2.625rem;
+	color: #DF4B2D;
+	text-transform: uppercase;
+    margin: 0 0 5px 0;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+    text-align: center;
+}
+.contact-title-jp {
+	font-size: 1.125rem;
+    font-weight: 700;
+	letter-spacing: 0.2em;
+    text-align: center;
+}
+.contact-content {
+    text-align: center;
+	margin-top: 50px;
+}
+.contact-text {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	line-height: 2;
+	margin-bottom: 40px;
+    text-align: center;
+}
+.contact-btn {
+	display: inline-block;
+	background-color: #DF4B2D;
+	color: #fff;
+	padding: 18px 60px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.2rem;
+	transition: opacity 0.3s, transform 0.3s;
+}
+.contact-btn:hover {
+	/* opacity: 0.8; */
+	transform: scale(1.1);
+}
+
+/* ======= */
+/* フッター  */
+/* ======= */
+.site-footer {
+	background-color: #DF4B2D; 
+	padding: 40px 0;
+	text-align: center;
+}
+.copyright {
+	color: #FFFF;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.contact-section {
+		padding: 60px 20px; 
+	}
+	.contact-title-en {
+		font-size: 2rem;
+	}
+	.contact-title-jp {
+		font-size: 1rem;
+	}
+	.contact-content {
+		margin-top: 30px;
+	}
+	.contact-text {
+		font-size: 0.9375rem;
+		line-height: 1.8;  
+		margin-bottom: 30px;
+	}
+	.contact-btn {
+		padding: 15px 0;   
+		width: 100%;     
+		max-width: 280px;   
+		font-size: 1.1rem;
+	}
+	.site-footer {
+		padding: 30px 0;
+	}
+	.copyright {
+		font-size: 0.75rem; 
+	}
+}
+
+/* =================================== */
+/* 全ページ共通：ページトップへ戻るボタン */
+/* =================================== */
+.return-top-btn {
+	position: fixed;
+	right: 0;      
+	bottom: 20px;    
+	z-index: 999;     
+	width: 100px;    
+	height: auto;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px);
+	transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+}
+.return-top-btn.is-active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.return-top-btn a {
+	display: block;
+	text-decoration: none;
+}
+.return-top-btn img {
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: transform 0.3s;
+}
+.return-top-btn:hover img {
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+	.return-top-btn {
+		width: 70px;   
+		right: 15px;
+		bottom: 15px;
+	}
+}
+
+/* =================== */
+/* ABOUTページ：ヘッダー */
+/* =================== */
+.about-site-header {
+	/* ヘッダーの固定配置
+	position: fixed;
+	top: 20px; 
+	left: 0;
+	right: 0; 
+	margin: 0 auto; 
+	width: 90%; 
+	max-width: 1400px; 
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	transform: none; */
+	position: absolute;
+	top: 20px; 
+	left: 0;
+	right: 0; 
+	margin: 0 auto; 
+	width: 90%; 
+	max-width: 1400px; 
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	transform: none;
+}
+.home-btn {
+	display: block;
+	width: 100px; 
+	transition: transform 0.3s;
+}
+.home-btn:hover {
+	transform: scale(1.1);
+}
+.home-icon {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.about-header-nav {
+	background-color: #f0f2f5; 
+	border-radius: 50px;
+	padding: 10px 60px;
+	position: static;
+	transform: none;
+	transition: background-color 0.3s;
+}
+.about-header-nav.is-scrolled {
+	background-color: rgba(243, 244, 245, 0.6); 
+	box-shadow: none;
+}
+.about-header-nav ul {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+	list-style: none;
+}
+.about-header-nav a {
+    display: inline-block;
+    font-family: 'Darumadrop One', sans-serif;
+	text-decoration: none;
+	color: #DF4B2D;
+	font-weight: 700;
+	font-size: 1.5rem;
+	letter-spacing: 0.25em;
+	transition: opacity 0.3s;
+}
+.about-header-nav a:hover {
+	/* opacity: 0.7; */
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+	.about-site-header { 
+		/* ヘッダーの固定配置
+		top: 10px;
+		gap: 10px;
+		width: 90%; */
+		position: absolute;
+		top: 10px;
+		gap: 10px;
+		width: 90%;
+	}
+	.home-btn {
+		width: 45px;
+	}
+	.about-header-nav { 
+		padding: 8px 25px;
+	}
+	.about-header-nav ul { 
+		gap: 20px;
+	}
+	.about-header-nav a { 
+		font-size: 1rem;
+	}
+}
+
+/* ============================ */
+/* ABOUTページ：自己紹介セクション */
+/* ============================ */
+.profile-section{
+    background-image: url("../img/about-page-background-image.png"); 
+	background-size: 2000px 700px;    
+	background-position: center top;
+	background-repeat: no-repeat;
+	padding-top: 240px; 
+}
+.profile-title {
+	padding-bottom: 120px;
+}
+.profile-title-en {
+	font-family: 'Darumadrop One', sans-serif;
+	color: #F34CAB;
+	font-size: 2.625rem;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	margin: 0 0 5px 0;
+    text-align: center;
+}
+.profile-title-jp {
+	font-size: 1.125rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+    text-align: center;
+}
+.profile-main-container {
+	display: flex;
+	align-items: center; 
+	justify-content: center; 
+	gap: 60px; 
+	width: 90%;
+	max-width: 1100px; 
+	margin: 0 auto;
+    margin-top: -50px; 
+	position: relative; 
+	z-index: 1;
+}
+.profile-image {
+	flex: 1; 
+	max-width: 500px;
+	background-color: #D9D9D9;
+	aspect-ratio: 3 / 2;
+}
+.profile-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.profile-text {
+	flex: 1; 
+	text-align: left;
+}
+.en-name {
+	font-family: 'Darumadrop One', sans-serif;
+	color: #F34CAB;
+	font-size: 1.25rem;
+    line-height: 1em;
+	letter-spacing: 0.1em;
+}
+.jp-name {
+	font-family: 'Darumadrop One', sans-serif;
+	font-size: 2rem;
+	margin-bottom: 30px;
+	letter-spacing: 0.05em;
+}
+.description p {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	margin-bottom: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-section {
+		padding-top: 140px;
+		background-position: center center; 
+	}
+	.profile-main-container {
+		flex-direction: column;
+        align-items: center;
+		gap: 30px;
+		width: 95%;
+	}
+    .profile-text {
+		text-align: center; 
+	}
+	.profile-title .profile-title-en {
+		font-size: 3.5rem;
+	}
+	.jp-name {
+		font-size: 2rem;
+		margin-bottom: 20px;
+	}
+}
+
+/* ========================= */
+/* ABOUTページ：強みセクション */
+/* ========================= */
+.strengths-section {
+	padding-top: 100px;
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.strengths-title {
+	margin-bottom: 80px;
+	text-align: center; 
+	width: fit-content;
+	max-width: 1200px;
+	margin-left: 5%; 
+	margin-right: auto;
+}
+.strengths-title-en {
+	font-family: 'Darumadrop One', sans-serif;
+	color: #F34CAB;
+	font-size: 2.625rem;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	margin-bottom: 5px;
+    display: block;
+	white-space: nowrap;
+}
+.strengths-title-jp {
+	font-size: 1.125rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+    display: block;
+    text-align: center;
+	margin: 0;
+}
+.strengths-container {
+	display: flex;
+	justify-content: center;
+	gap: 80px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.strengths-card {
+	flex: 1;
+}
+.strengths-item-title {
+	font-size: 1.3125rem;
+	font-weight: 500;
+	letter-spacing: 0.05em;                     
+	/* background-color: rgba(243, 76, 171, 0.08);
+	border-left: 5px solid #F34CAB;   */
+	color: #fff;                   
+	background-color: rgba(243, 76, 171, 0.85);   
+	padding: 10px 20px;               
+	margin: 0 0 20px 0; 
+	width: fit-content;
+}
+/* .strengths-item-title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #F34CAB;
+} */
+.strengths-item-text {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
+	text-align: justify; 
+}
+
+@media screen and (max-width: 768px) {
+	.strengths-container {
+		flex-direction: column;
+		gap: 30px;
+	}
+}
+
+/* ==================================== */
+/* ABOUTページ：デザインポリシーセクション */
+/* ==================================== */
+.policy-section {
+    padding-top: 100px;
+
+}
+.policy-title {
+    margin-bottom: 80px;
+    text-align: center;
+    width: fit-content;
+    max-width: 1200px;
+    margin-left: 15%;
+    margin-right: auto;
+}
+.policy-title-en {
+    font-family: 'Darumadrop One', sans-serif;
+    color: #F34CAB;
+    font-size: 2.625rem;
+    letter-spacing: 0.05em;
+    line-height: 1em;
+    margin-bottom: 5px;
+    display: block;
+    white-space: nowrap;
+}
+.policy-title-jp {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    display: block;
+    text-align: center;
+    margin: 0;
+}
+.policy-container {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;                  
+	width: 90%;
+	max-width: 1000px;          
+	margin: 0 auto;
+}
+.policy-card {
+	display: flex;
+	align-items: flex-start;   
+	gap: 40px;                 
+	width: 100%;
+}
+.policy-number {
+	font-family: 'Darumadrop One', sans-serif;
+	font-size: 6.5rem;            
+	color: rgba(243, 76, 171, 0.3);
+	line-height: 0.8em;       
+	flex-shrink: 0;            
+}
+.policy-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;   
+}
+.policy-item-title {
+	font-size: 1.3125rem;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	text-align: left;
+	color: #fff;                   
+	background-color: rgba(243, 76, 171, 0.85);   
+	padding: 10px 20px;            
+	margin: 0 0 15px 0;        
+	width: fit-content;            
+	max-width: 100%;
+}
+.policy-item-text {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
+	text-align: justify;          
+	margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.policy-card {
+		flex-direction: column; 
+		gap: 15px;
+	}
+	.policy-number {
+		font-size: 5rem;
+	}
+	.policy-item-title {
+		font-size: 1.125rem;
+		padding: 8px 15px;
+	}
+	.policy-item-text {
+		font-size: 0.9375rem;
+	}
+}
+
+/* ============================ */
+/* ABOUTページ：経歴セクション */
+/* ============================ */
+.career-section {
+	padding: 100px 0;
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.career-title {
+	margin-bottom: 80px;
+	text-align: center; 
+	width: fit-content;
+	max-width: 1200px;
+	margin-left: 7.5%; 
+	margin-right: auto;
+}
+.career-title-en {
+	font-family: 'Darumadrop One', sans-serif;
+	color: #F34CAB;
+	font-size: 2.625rem;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	margin-bottom: 5px;
+    display: block;
+	white-space: nowrap;
+}
+.career-title-jp {
+	font-size: 1.125rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+    display: block;
+    text-align: center;
+	margin: 0;
+}
+.career-timeline {
+	position: relative;
+	padding-left: 40px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+.career-timeline::before {
+	content: "";
+	position: absolute;
+	top: -25px;
+	left: 5px; 
+	width: 3px;
+	height: calc(100% - 25px);
+	background-color: rgba(243, 76, 193, 0.5);
+}
+.timeline-item {
+	position: relative;
+	margin-bottom: 60px;
+}
+.timeline-item:last-child {
+	margin-bottom: 0;
+}
+.timeline-date-content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+    position: relative;
+}
+.timeline-dot {
+	position: absolute;
+	left: -40px; 
+	top: 50%;
+	transform: translateY(-50%);
+	width: 15px;
+	height: 15px;
+	background-color: #F34CAB;
+	border-radius: 50%;
+	z-index: 1;
+}
+.timeline-date {
+	font-size: 1.125rem;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+.timeline-description p {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+	.career-timeline {
+		padding-left: 30px;
+	}
+	.timeline-dot {
+		left: -30px;
+	}
+	.timeline-date {
+		font-size: 1.1rem;
+	}
+}
+
+/* ========================= */
+/* ABOUTページ：その他セクション */
+/* ========================= */
+.others-section {
+	padding: 100px 0;
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.others-title {
+	margin-bottom: 80px;
+	text-align: center; 
+	width: fit-content;
+	max-width: 1200px;
+	margin-left: 7.5%; 
+	margin-right: auto;
+}
+.others-title-en {
+	font-family: 'Darumadrop One', sans-serif;
+	color: #F34CAB;
+	font-size: 2.625rem;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	margin-bottom: 5px;
+    display: block;
+	white-space: nowrap;
+}
+.others-title-jp {
+	font-size: 1.125rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+    display: block;
+    text-align: center;
+	margin: 0;
+}
+.others-container {
+	display: flex;
+	justify-content: center;
+	gap: 60px; 
+	max-width: 900px;
+	margin: 0 auto;
+}
+.others-block {
+	flex: 1; 
+}
+.others-block-title {
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 30px;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+.likes-items {
+	display: flex;
+	justify-content: center;
+	gap: 30px; 
+}
+.like-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px; 
+}
+/* .like-item img {
+	width: 120px; 
+	height: auto;
+	object-fit: contain;
+} */
+.like-item p {
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	margin: 0;
+	white-space: nowrap; 
+}
+.others-block-title-qualifications{
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 50px;
+	text-align: center;
+	letter-spacing: 0.05em;
+}
+.qualifications-list {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px; 
+}
+.qualifications-list li {
+	list-style: none;
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;
+	margin: 0;
+	position: relative;
+	padding-left: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+	.others-container {
+		flex-direction: column; 
+		gap: 50px;
+	}
+	.likes-items {
+		flex-wrap: wrap; 
+		gap: 20px;
+	}
+	.like-item p {
+		font-size: 0.8rem;
+	}
+}
+
+/* ========================= */
+/* WORKS詳細ページ：指輪サイト */
+/* ========================= */
+.works-detail-main {
+	padding-top: 160px; 
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+.works-title-section {
+	position: relative;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.deco-character {
+	position: absolute;
+	right: 15%;
+	bottom: -175%;
+	width: 180px;
+	z-index: 10;
+}
+.deco-character img {
+	width: 100%;
+	height: auto;
+}
+.works-visual-section {
+	padding: 0 40px;
+}
+.mockup-container {
+	background-color: #f0f2f5; 
+	border-radius: 30px;
+	padding: 30px 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.laptop-mockup-single {
+	width: 100%;
+	max-width: 600px; 
+}
+.mockup-image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.works-spec-section {
+	padding: 80px 40px;
+}
+.spec-container {
+	max-width: 900px;       
+	margin: 0 auto;
+}
+.spec-header {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	border-bottom: 4px solid #D1D1D1; 
+	padding-bottom: 25px;
+	margin-bottom: 0;
+}
+.spec-main-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin: 0;
+}
+.badge-personal,.badge-team {
+	background-color: #70BFD5;  
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 700;
+	padding: 7.5px 30px;
+	border-radius: 30px;
+	display: inline-block;
+	white-space: nowrap;
+	letter-spacing: 0.2em;
+}
+.spec-content-list {
+	display: flex;
+	flex-direction: column;
+}
+.spec-block {
+	display: flex;
+	flex-direction: row;       
+	align-items: center;
+	border-bottom: 4px solid #D1D1D1;
+	padding: 50px 0;
+}
+.spec-block.no-border {
+	border-bottom: none;      
+}
+.spec-label {
+	width: 200px;              
+	font-size: 1.3125rem;
+	font-weight: 700;
+	color: #F3AD4C;             
+	letter-spacing: 0.1em;
+	flex-shrink: 0;
+	padding-top: 2px;
+	text-align: center;
+}
+.spec-value {
+	flex-grow: 1;
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-size: 1rem;      
+	line-height: 1.8;
+}
+.spec-value p {
+	margin: 0 0 15px 0;
+}
+.spec-value p:last-child {
+	margin-bottom: 0;
+}
+.color-palette {
+	display: flex;
+	justify-content: flex-start;
+	gap: 40px;
+	margin: 15px 0 25px;
+}
+.color-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.color-name {
+	font-size: 0.875rem;
+	color: #777;
+	margin-bottom: 8px;
+}
+.color-chip {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	border: 1px solid #E1E1E1;
+}
+.bg-base { background-color: #F6F4F2; }
+.bg-main { background-color: #EDE4CD; } 
+.bg-accent1 { background-color: #C1AB05; } 
+.bg-accent2 { background-color: #7B2D26; }
+
+.works-preview-area {
+	margin: 0 auto;
+	max-width: 700px; 
+	text-align: center;
+}
+.preview-scroll-container {
+	width: 100%;
+	height: 600px;
+	overflow-y: scroll; 
+	border-radius: 8px;
+	margin-bottom: 100px;
+}
+.preview-image {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.site-link-wrap {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+.btn-site-link {
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	color: #fff;
+	background-color: #70BFD5;
+	padding: 10px 50px;
+	border-radius: 50px; 
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+.btn-site-link:hover {
+	transform: translateY(-3px); 
+}
+/* KAKISEN.固有のコード */
+/* .badge-team {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #70BFD5;
+    box-shadow: inset 0 0 0 5px #70BFD5;
+    border-radius: 30px; 
+    background-color: #ffffff;
+    white-space: nowrap;
+	letter-spacing: 0.15em;
+} */
+.bg-kakisen-base {
+    background-color: #FFF8F0; 
+    border: 1px solid #EAE2D8; 
+}
+.bg-kakisen-main {
+    background-color: #E64C4C; 
+}
+.bg-kakisen-accent {
+    background-color: #FDC865; 
+}
+/* こころばの森診療所固有 */
+.bg-mental-base {
+    background-color: #FFF; 
+    border: 1px solid #EAE2D8; 
+}
+.bg-mental-main {
+    background-color: #FCF9F2; 
+}
+.bg-mental-accent {
+    background-color: #EAA32A; 
+}
+/* 四つ折りリーフレット */
+.bg-koukaidou-base {
+    background-color: #F7F6E8; 
+    border: 1px solid #EAE2D8; 
+}
+.bg-koukaidou-main {
+    background-color: #D6CE31; 
+}
+.bg-koukaidou-accent {
+    background-color: #1C2B66; 
+}
+.leaflet-detail-container {
+	width: 100%;
+	max-width: 1000px;     
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;             
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.leaflet-item-block {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start; 
+	gap: 20px;            
+	width: 100%;
+}
+.leaflet-image-box {
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 8px;   
+	transition: transform 0.4s ease, box-shadow 0.4s ease;
+	overflow: hidden;
+}
+.leaflet-image-box:hover {
+	transform: translateY(-5px);
+}
+.leaflet-image-box img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+}
+.leaflet-label {
+	display: inline-block;
+	background-color: #1C2B66; 
+	color: #ffffff;
+	font-size: 0.8125rem;     
+	font-weight: 700;
+	padding: 6px 14px;
+	border-radius: 4px;
+	letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 768px) {
+	.header-inner {
+		padding: 0 20px;
+	}
+	.logo-home a {
+		width: 55px;
+		height: 55px;
+	}
+	.portfolio-nav {
+		padding: 8px 20px;
+	}
+	.portfolio-nav ul {
+		gap: 20px;
+	}
+	.portfolio-nav a {
+		font-size: 0.95rem;
+	}
+	.works-detail-main {
+		padding-top: 120px;
+	}
+	.deco-character {
+		right: 5%;
+		width: 70px;
+		bottom: -10px;
+	}
+	.works-visual-section {
+		padding: 0 20px;     
+	}
+	.mockup-container {
+		padding: 40px 15px;    
+		border-radius: 20px;
+	}
+	.spec-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding-bottom: 16px;
+	}
+	.spec-main-title {
+		font-size: 1.15rem;
+		line-height: 1.4;
+	}
+	.spec-block {
+		flex-direction: column;    
+		gap: 15px;
+		padding: 30px 0;
+		border-bottom-width: 3px;
+		align-items: center;
+	}
+	.spec-label {
+		width: 100%;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	.spec-value {
+		font-size: 0.875rem;
+		line-height: 1.7;
+	}
+	.color-palette {
+		gap: 25px;
+	}
+	.color-chip {
+		width: 50px;
+		height: 50px;
+	}
+}

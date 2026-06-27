@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- ビューポート -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP｜OBATA HARUKA Portfolio</title>
+<!-- フォント -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@300;400;500;700;900+Gothic&display=swap" rel="stylesheet">
+<!-- スタイルシート -->
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!--jQuery本体-->
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<!--切り替え処理の関数-->
+<script>
+$(function(){
+    $('.tab-btn').click(function(){
+        // クリックされたボタンのターゲット（ID）を取得
+        var target = $(this).data('target');
+
+        // 一旦すべてのコンテンツをフェードアウトまたは非表示にする
+        $('.skill-content-item').hide();
+        
+        // 対象のコンテンツ（#design、#coding等）をフェードインで表示
+        $('#' + target).fadeIn(400);
+
+        // ボタンのスタイル切り替え（activeクラスの付け替え）
+        $('.tab-btn').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- ヘッダー -->
+    <header class="site-header">
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- トップビュー -->
+    <div class="hero-container">
+		<div class="hero-overlay"></div>
+		
+		<div class="hero-inner">
+			<p class="hero-overlay-text">
+                OBATA<br>HARUKA<br>
+                <p class="hero-overlay-text-small">portfolio</p>
+			</p>
+		</div>
+		
+		<div class="hero-character">
+			<img src="img/character.png" alt="赤い動物のキャラクター">
+		</div>
+	</div>
+
+<!-- 自己紹介セクション -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+
+            <div class="about-profile">
+                <p class="profile-en">OBATA HaRUKA</p>
+                <h1 class="profile-jp">おばた はるか</h1>
+                <div class="profile-avatar">
+                    <img src="img/haruka-avatar.png" alt="小幡 春花の3Dイラスト">
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>はじめまして。小幡 春花と申します。</p>
+                    <p>ポートフォリオをご覧いただきありがとうございます。</p>
+                    <p>2025年6月から12月までの約6か月間にわたり職業訓練校にて</p>
+                    <p>デザインについて幅広く学び、現在は転職活動中です。</p>
+                    <p>Webデザインの学習歴はまだ1年未満と短いですが、</p>
+                    <p>デザインの「楽しさ」と「奥深さ」を実感する毎日です。</p>
+                    <p>当サイトにて、私についてや作品についての考えの断片が届きますように。</p>
+                </div>
+                <a href="about/index.html" class="more-btn">もっとみる →</a>
+            </div>
+            
+        </div>
+    </section>
+
+<!-- 私にできることセクション -->
+    <section class="skills-section">
+		<div class="skills-title-area">
+			<h2 class="skills-title-en">What I can do</h2>
+			<p class="skills-title-jp">わたしにできること</p>
+		</div>
+
+		<div class="skills-container">
+			<div class="skill-card">
+				<div class="card-header">
+					<span class="card-num">01</span>
+					<h3 class="card-title">Webサイト制作</h3>
+				</div>
+				<div class="card-img">
+					<img src="img/skill-web.png" alt="Webサイト制作のイラスト">
+				</div>
+				<p class="card-text">
+					FigmaやIllustratorでカンプを制作してコンセプトに合わせながら分かりやすさ・見やすさを重視して制作しています。
+				</p>
+			</div>
+
+			<div class="skill-card">
+				<div class="card-header">
+					<span class="card-num">02</span>
+					<h3 class="card-title">グラフィックデザイン</h3>
+				</div>
+				<div class="card-img">
+					<img src="img/skill-graphic.png" alt="グラフィックデザインのイラスト">
+				</div>
+				<p class="card-text">
+					Illustratorを主に使用し、伝えたい情報を明確に、分かりやすさとデザイン性を重視したデザインを制作しています。
+				</p>
+			</div>
+
+			<div class="skill-card">
+				<div class="card-header">
+					<span class="card-num">03</span>
+					<h3 class="card-title">コーディング</h3>
+				</div>
+				<div class="card-img">
+					<img src="img/skill-coding.png" alt="コーディングのイラスト">
+				</div>
+				<p class="card-text">
+					Visual Studio Codeを使用し、レスポンシブなデザインを考慮しながらコーディングをしています。
+				</p>
+			</div>
+		</div>
+	</section>
+
+<!-- スキルセクション -->
+    <section class="skill-detail-section">
+        <div class="skill-detail-title-area">
+            <h2 class="skill-detail-title-en">SKILL</h2>
+            <p class="skill-detail-title-jp">スキル</p>
+        </div>
+
+        <div class="skill-tabs">
+            <button class="tab-btn active" data-target="design">デザイン</button>
+            <button class="tab-btn" data-target="coding">コーディング</button>
+            <button class="tab-btn" data-target="ai">AI</button>
+            <button class="tab-btn" data-target="other">その他</button>
+        </div>
+
+        <div class="skill-content-wrap">
+            
+            <div id="design" class="skill-content-item">
+                <h3 class="category-title">デザイン</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <h4 class="skill-name">Figma</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">
+                                <img src="img/icon-figma.png" alt="Figma">
+                            </div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">ワイヤーフレームからカンプまでのデザイン制作に使用</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="skill-name">Illustrator</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">Ai</div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">ワイヤーフレームからカンプまでのデザイン制作に使用やロゴなどの制作に使用</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="skill-name">Photoshop</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">Ps</div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">画像加工やモックアップなどに使用</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="coding" class="skill-content-item" style="display: none;">
+                <h3 class="category-title">コーディング</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <h4 class="skill-name">HTML / CSS</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">HTML<br>CSS</div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">基礎的なものからレスポンシブなコーディングやアニメーションの実装に使用<br>昨年3月にWebデザイン技能検定3級に合格</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ai" class="skill-content-item" style="display: none;">
+                <h3 class="category-title">AI</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <h4 class="skill-name">ChatGPT</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">
+                                <img src="img/icon-chatgpt.png" alt="AI tools">
+                            </div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">ちょっとした質問や簡単な作業に使用</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="skill-name">Google Gemini</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">
+                                <img src="img/icon-googlegemini.png" alt="AI tools">
+                            </div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">プロンプトの生成や文章ライティングやコーディングのアシストに使用</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4 class="skill-name">Copilot</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">
+                                <img src="img/icon-copilot.png" alt="AI tools">
+                            </div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">画像生成に使用</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="other" class="skill-content-item" style="display: none;">
+                <h3 class="category-title">その他</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <h4 class="skill-name">GitHub</h4>
+                        <div class="skill-visual-area">
+                            <div class="skill-icon">
+                                <img src="img/icon-github.png" alt="GitHub">
+                            </div>
+                            <div class="skill-level-bar">
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-fill"></span>
+                                <span class="level-indicator level-empty"></span>
+                                <span class="level-indicator level-empty"></span>
+                            </div>
+                        </div>
+                        <p class="skill-description">グループでのコード共有や自作のwebサイトの公開に使用</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- 制作物セクション -->
+    <section class="works-section">
+		<div class="works-title-area">
+			<h2 class="works-title-en">WORKS</h2>
+			<p class="works-title-jp">制作物</p>
+		</div>
+
+		<div class="works-container">
+			<div class="works-item">
+				<a href="works/ring/index.html" class="works-link">
+					<div class="works-img-box bg-gold">
+						<img src="img/mockup-tamaenishi.png" alt="珠結のWebサイト画面">
+					</div>
+					<div class="works-info-box">
+						<div class="works-meta">
+							<span class="badge badge-personal">個人制作</span>
+							<span class="works-pages">WEBサイト 8ページ</span>
+						</div>
+						<p class="works-tags">WEB DESIGN / CODING</p>
+						<h3 class="works-item-title">日本の美を紡ぐ結婚指輪専門店</h3>
+					</div>
+				</a>
+			</div>
+
+			<div class="works-item">
+				<a href="works/senbei/index.html" class="works-link">
+					<div class="works-img-box bg-red">
+						<img src="img/mockup-kakisen.png" alt="KAKISEN.のWebサイト画面">
+					</div>
+					<div class="works-info-box">
+						<div class="works-meta">
+							<span class="badge badge-team">チーム制作</span>
+							<span class="works-pages">WEBサイト 7ページ</span>
+						</div>
+						<p class="works-tags">WEB DESIGN / CODING / ART DIRECTOR</p>
+						<h3 class="works-item-title">新感覚の広島産牡蠣せんべい店</h3>
+					</div>
+				</a>
+			</div>
+
+			<div class="works-item">
+				<a href="works/mental/index.html" class="works-link">
+					<div class="works-img-box bg-orange">
+						<img src="img/mockup-kokoroba.png" alt="こころばの森診療所のWebサイト画面">
+					</div>
+					<div class="works-info-box">
+						<div class="works-meta">
+							<span class="badge badge-personal">個人制作</span>
+							<span class="works-pages">WEBサイト 7ページ</span>
+						</div>
+						<p class="works-tags">WEB DESIGN / CODING / GRADUATION WORK</p>
+						<h3 class="works-item-title">心に寄り添う街のかかりつけ医</h3>
+					</div>
+				</a>
+			</div>
+
+            <div class="works-item">
+				<a href="works/leaflet/index.html" class="works-link">
+					<div class="works-img-box bg-yellow">
+						<img src="img/mockup-koukaidou.png" alt="温泉宿のリーフレット">
+					</div>
+					<div class="works-info-box">
+						<div class="works-meta">
+							<span class="badge badge-team">チーム制作</span>
+							<span class="works-pages">四つ折りリーフレット</span>
+						</div>
+						<p class="works-tags">GRAPHIC DESIGN </p>
+						<h3 class="works-item-title">くつろぎの温泉宿『光海堂』</h3>
+					</div>
+				</a>
+			</div>
+
+            <div class="works-item layout-vertical">
+                <a href="#" class="works-link">
+                    <div class="works-info-box">
+                        <div class="works-meta">
+                            <span class="badge badge-personal">個人制作</span>
+                            <span class="works-pages">グラフィック 4点</span>
+                        </div>
+                        <p class="works-tags">GRAPHIC DESIGN / BRANDING / PACKAGE</p>
+                        <h3 class="works-item-title">ワインのグラフィックデザイン</h3>
+                    </div>
+                </a>
+                
+                <div class="works-img-box bg-bordeaux works-modal-trigger">
+                    <div class="wine-grid-container">
+                        <div class="wine-grid-item"><img src="img/mockup-wine-poster.png" alt="ワインのポスター"></div>
+                        <div class="wine-grid-item"><img src="img/mockup-wine-box.png" alt="ワインの箱パッケージ"></div>
+                        <div class="wine-grid-item"><img src="img/mockup-winebottle-Nocturne-Rosé.png" alt="ロゼワインボトル"></div>
+                        <div class="wine-grid-item"><img src="img/mockup-winebottle-pokapokabudou.png" alt="ぶどうワインボトル"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wine-full-modal" class="wine-modal-overlay">
+                <div class="wine-modal-content">
+                    <div class="wine-modal-container">
+                        <div class="wine-modal-item"><img src="img/mockup-wine-poster.png" alt="ワインのポスター"></div>
+                        <div class="wine-modal-item"><img src="img/mockup-wine-box.png" alt="ワインの箱パッケージ"></div>
+                        <div class="wine-modal-item"><img src="img/mockup-winebottle-Nocturne-Rosé.png" alt="ロゼワインボトル"></div>
+                        <div class="wine-modal-item"><img src="img/mockup-winebottle-pokapokabudou.png" alt="ぶどうワインボトル"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+
+<!-- contactセクション -->
+    <section id="contact" class="contact-section">
+        <div class="contact-title-area">
+            <h2 class="contact-title-en">CONTACT</h2>
+            <p class="contact-title-jp">お問い合わせ</p>
+        </div>
+
+        <div class="contact-content">
+            <p class="contact-text">
+                この度は貴重なお時間をいただきご覧になってくださりありがとうございます！<br>
+                これからのご縁につながりましたら幸いです。
+            </p>
+            <a href="vokaro17@gmail.com" class="contact-btn">メールを送る</a>
+        </div>
+    </section>
+<!-- フッター -->
+    <footer class="site-footer">
+        <p class="copyright">@2025 OBATA HARUKA Portfolio</p>
+    </footer>
+
+
+<script>
+$(function() {
+    // ヘッダーの動き
+	// $(window).on('scroll', function() {
+	// 	if ($(this).scrollTop() > 100) {
+	// 		$('.header-nav').addClass('is-scrolled');
+	// 	} else {
+	// 		$('.header-nav').removeClass('is-scrolled');
+	// 	}
+	// });
+    
+    // トップに戻るボタン
+    var $pageTop = $('#page-top');
+	$(window).on('scroll', function() {
+		if ($(this).scrollTop() > 150) {
+			$pageTop.addClass('is-active');
+		} else {
+			$pageTop.removeClass('is-active');
+		}
+	});
+	$pageTop.on('click', function(e) {
+		e.preventDefault(); 
+		$('html, body').animate({
+			scrollTop: 0
+		}, 500); 
+	});
+});
+
+    // スクロールすると赤い動物が下に沈んでいくアニメーション
+	$(window).on('scroll', function() {
+		var scrollTop = $(this).scrollTop();
+		
+		var moveY = scrollTop * 0.4; 
+		
+		$('.hero-character').css({
+			'transform': 'translate(-50%, ' + moveY + 'px)'
+		});
+	});
+
+    // ボルドーの画像ボックス全体をクリックしたときにモーダルを展開
+    $('.works-modal-trigger').on('click', function(e) {
+        e.preventDefault();
+        $('#wine-full-modal').addClass('is-active').hide().fadeIn(400);
+        $('body').css('overflow', 'hidden'); // 背後のメイン画面のスクロールを禁止
+    });
+
+    // ボルドー枠の外側の空間（#wine-full-modal）をクリックしたら閉じる
+    $('#wine-full-modal').on('click', function(e) {
+        // ボルドーのコンテナ（.wine-modal-container）やその中の画像をクリックしたときは閉じないようにガード
+        if (!$(e.target).closest('.wine-modal-container').length) {
+            $('#wine-full-modal').fadeOut(300, function() {
+                $(this).removeClass('is-active');
+                $('body').css('overflow', 'auto'); // メイン画面のスクロール禁止を解除
+            });
+        }
+    });
+</script>
+
+<!-- トップに戻るボタン -->
+<div id="page-top" class="return-top-btn">
+	<a href="#">
+		<img src="img/page-top-button.png" alt="うえにもどるのボタン">
+	</a>
+</div>
+
+</body>
+</html>
